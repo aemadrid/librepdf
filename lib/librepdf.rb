@@ -4,10 +4,11 @@ if defined?(Java) and defined?(JRUBY_VERSION) and PLATFORM == 'java'
   require 'java'
   
   module Librepdf
-    require 'librepdf/java/juh'
-    require 'librepdf/java/jurt'
-    require 'librepdf/java/ridl'
-    require 'librepdf/java/unoil'
+    require 'librepdf/java/snakeyaml-1.14'
+    require 'librepdf/java/juh-3.2.1'
+    require 'librepdf/java/jurt-3.2.1'
+    require 'librepdf/java/ridl-3.2.1'
+    require 'librepdf/java/unoil-3.2.1'
     require 'librepdf/java/librepdf'
    
     import 'librepdf.Connection'

@@ -18,3 +18,7 @@ tmp
 java/bin
 lib/librepdf/java/*.jar
 
+.jbundler/
+.ruby-version
+java/librepdf.iml
+lib/librepdf/java/
