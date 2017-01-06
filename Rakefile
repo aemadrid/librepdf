@@ -20,14 +20,13 @@ task :jar do
   ant.javac srcdir: root + '/java/src', destdir: root + '/java/bin', includeantruntime: 'no', classpath: classpath do
     compilerarg value: '-Xlint:unchecked'
   end
-  ant.jar jarfile: root + '/lib/librepdf/java/librepdf.jar', filesetmanifest: 'mergewithoutmain' do
+  ant.jar jarfile: root + '/java/lib/librepdf.jar', filesetmanifest: 'mergewithoutmain' do
     fileset dir: root + '/java/bin', includes: '**/*.class'
     fileset dir: root + '/java/src', includes: '**/*.java'
   end
-  ant.copy todir: root + '/lib/librepdf/java/' do
-    fileset dir: root + '/java/lib', includes: '*.jar'
-  end
   ant.delete dir: root + '/java/bin'
+  ant.delete dir: root + '/lib/librepdf/java'
+  ant.delete dir: root + '/java/lib/librepdf'
 end
 
 begin

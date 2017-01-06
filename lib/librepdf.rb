@@ -1,16 +1,18 @@
 require "librepdf/version"
 
-if defined?(Java) and defined?(JRUBY_VERSION) and PLATFORM == 'java'
+if RUBY_ENGINE == 'jruby'
   require 'java'
-  
+
+  ROOT = File.expand_path('../..', __FILE__)
+
   module Librepdf
-    require 'librepdf/java/snakeyaml-1.14'
-    require 'librepdf/java/juh-3.2.1'
-    require 'librepdf/java/jurt-3.2.1'
-    require 'librepdf/java/ridl-3.2.1'
-    require 'librepdf/java/unoil-3.2.1'
-    require 'librepdf/java/librepdf'
-   
+    require ROOT + '/java/lib/snakeyaml-1.14'
+    require ROOT + '/java/lib/juh-3.2.1'
+    require ROOT + '/java/lib/jurt-3.2.1'
+    require ROOT + '/java/lib/ridl-3.2.1'
+    require ROOT + '/java/lib/unoil-3.2.1'
+    require ROOT + '/java/lib/librepdf'
+
     import 'librepdf.Connection'
     import 'librepdf.document.Document'
     class Document
